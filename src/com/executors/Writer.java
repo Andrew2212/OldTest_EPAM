@@ -42,8 +42,6 @@ public class Writer {
 
         } catch (IOException e) {
             e.printStackTrace();
-        } finally{
-            PlayStation.play();
         }
 
     }

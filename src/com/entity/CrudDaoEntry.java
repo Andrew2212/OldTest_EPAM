@@ -42,8 +42,6 @@ public class CrudDaoEntry {
         //Add Entry into Storage
         Storage.getListEntry().add(entry);
         Printer.printStorageByRequest();
-
-        PlayStation.play();
     }
 
     public static void deleteEntryFromStorage() {
@@ -51,15 +49,12 @@ public class CrudDaoEntry {
         //Get deleted entry name
         String deletedEntryName = PlayStation.obtainEntryName();
         deleteEntryFromStorage(deletedEntryName);
-
-        PlayStation.play();
     }
 
     public static void deleteAllInvalidEntriesFromStorage() {
         String invalidName = INVALID_NAME;
         deleteEntryFromStorage(invalidName);
 
-        PlayStation.play();
     }
 
 //    =======Getters and Setters==========

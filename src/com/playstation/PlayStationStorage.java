@@ -36,7 +36,6 @@ public class PlayStationStorage {
                 Printer.printItIsInvalidEnter();
               break;
         }
-         PlayStation.play();
     }
 
     public static void letFilterStorage(){
@@ -86,7 +85,7 @@ public class PlayStationStorage {
         System.out.println("To sort by ascent press " + A + ", to sort by descent press " + D);
         String enter = new Scanner(System.in).next();
 
-        switch(enter.charAt(FIRST_CHAR)){
+        switch(enter.toUpperCase().charAt(FIRST_CHAR)){
             case A:
                 StorageSorter.sortByValueAscent();
                 break;

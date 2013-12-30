@@ -35,6 +35,9 @@ public class PlayStation {
         String enter = new Scanner(System.in).next();
         if (enter.equalsIgnoreCase("Y")) {
             Reader.readFromFileAndLoadToStorage();
+            play();
+        } else{
+            soLongUser();
         }
 
     }
@@ -52,10 +55,34 @@ public class PlayStation {
         }
 
 //     Whether user wants to quit
-        if (currentAction.equals(Action.QUIT)) return;
+        if (currentAction.equals(Action.QUIT)) {
+            soLongUser();
+            return;
+        }
 
 //     Go to the current action executor
         goToActionExecutor(currentAction);
+
+//        Recursive call
+        play();
+    }
+
+    /**
+     * @return entered Entry as <Name> = <Value>
+     */
+    public static String obtainEntryAsString() {
+        System.out.println("Enter required Entry as <Name> = <Value>");
+        String stringEntry = new Scanner(System.in).nextLine();
+        return stringEntry;
+    }
+
+    /**
+     * @return entered String 'name' for the new Entry
+     */
+    public static String obtainEntryName() {
+        System.out.println("Enter 'name' for the required Entry");
+        String entryName = new Scanner(System.in).nextLine();
+        return entryName;
     }
 
 //    =========Private Methods===========================
@@ -102,10 +129,10 @@ public class PlayStation {
                 break;
             case PRINT_STORAGE_VALUE:
                 Printer.printStorage();
-                play();
                 break;
             case WRITE_TO_FILE:
                 Writer.writeToFileFromStorage();
+                play();
                 break;
             case ADD_ENTRY:
                 CrudDaoEntry.addEntryToStorage();
@@ -122,25 +149,14 @@ public class PlayStation {
             case FILTER:
 //                TODO filtering
                 break;
+            default:
+                Printer.printItIsInvalidEnter();
+                break;
+
         }
-
     }
 
-    /**
-     * @return entered Entry as <Name> = <Value>
-     */
-    public static String obtainEntryAsString() {
-        System.out.println("Enter required Entry as <Name> = <Value>");
-        String stringEntry = new Scanner(System.in).nextLine();
-        return stringEntry;
-    }
-
-    /**
-     * @return entered String 'name' for the new Entry
-     */
-    public static String obtainEntryName() {
-        System.out.println("Enter 'name' for the required Entry");
-        String entryName = new Scanner(System.in).nextLine();
-        return entryName;
-    }
+   private  static void soLongUser(){
+       System.out.println("So long, dear user!");
+   }
 }

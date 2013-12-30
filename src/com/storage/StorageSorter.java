@@ -17,7 +17,6 @@ public class StorageSorter {
 
     public static List<Entry> list = Storage.getListEntry();
 
-    //TODO check it out
     public static Comparator<Entry> comparatorByName = new Comparator<Entry>() {
         @Override
         public int compare(Entry o1, Entry o2) {
@@ -34,7 +33,7 @@ public class StorageSorter {
     };
 
     public static List sortByNameAscent() {
-
+//      Sorts the specified list according to the order induced by the specified comparator.
         Collections.sort(list, comparatorByName);
         return list;
     }
@@ -47,7 +46,7 @@ public class StorageSorter {
 
 
     public static List sortByValueAscent() {
-
+        //      Sorts the specified list according to the order induced by the specified comparator.
         Collections.sort(list, comparatorByValue);
         return list;
     }
