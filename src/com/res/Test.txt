@@ -1,0 +1,9 @@
+count  =  100
+count  =  100
+Property1  =  10
+property1  =  1,5
+Path  =  C:\Windows
+cpu = Intel Core2 Duo
+Invalid Entry = 
+ip_address  =  127.0.0.1
+Comment  =  Файл с исходными данными
