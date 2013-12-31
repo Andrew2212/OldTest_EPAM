@@ -2,16 +2,13 @@ package com;
 
 import com.playstation.PlayStation;
 import com.storage.Storage;
-import com.executors.utils.FileChooser;
+import com.executors.FileChooser;
 
 import java.io.File;
 
 /**
  * Created with IntelliJ IDEA.
- * User: Andrew
- * Date: 13.12.13
- * Time: 17:55
- * To change this template use File | Settings | File Templates.
+ * User: Andrew2212
  */
 public class Main {
 
@@ -21,10 +18,9 @@ public class Main {
 
 //        args = new String[]{"src/com/res/Test.txt"};
         if (args.length != 0) customPathForReading = args[0];
+        setDefaultSetting();
 
         PlayStation.firstPlay();
-
-        setDefaultSetting();
     }
 
     public static void setDefaultSetting(){
@@ -32,6 +28,7 @@ public class Main {
         Storage.getListEntry().clear();
 //        delete default file for writing
         File file = new File(FileChooser.FILE_PATH_CUSTOM);
+        //noinspection ResultOfMethodCallIgnored
         file.delete();
     }
 

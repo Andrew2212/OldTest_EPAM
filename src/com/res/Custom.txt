@@ -1,7 +1,0 @@
-Comment = Файл с исходными данными
-cpu = Intel Core2 Duo
-Invalid Entry = 
-ip_address = 127.0.0.1
-Path = C:\Windows
-Property1 = 10
-property1 = 1,5

@@ -4,6 +4,7 @@ import com.entity.Entry;
 import com.storage.Storage;
 
 import java.io.File;
+import java.util.List;
 import java.util.Scanner;
 
 /**
@@ -30,11 +31,7 @@ public class Printer {
             return;
         }
 
-        printStorage();
-    }
-
-    public static void enterEntryName(){
-        System.out.println("Enter Entry name");
+        printListEntry(Storage.getListEntry());
     }
 
     public static void enterPathName() {
@@ -44,12 +41,13 @@ public class Printer {
 //    =========Prints come results====================
 
     /**
-     * Just prints Storage values
+     * @param list list of 'Entry' for print
+     *             Just prints listEntry values
      */
-    public static void printStorage() {
-        //        Print all entry from Storage.listEntry
+    public static void printListEntry(List<Entry> list) {
+        //        Print all entry from list
         System.out.println("***Printed what you want to get******");
-        for (Entry e : Storage.getListEntry()) {
+        for (Entry e : list) {
             System.out.println(e.getName() + " = " + e.getValue());
         }
         System.out.println("***");
@@ -57,14 +55,6 @@ public class Printer {
 
     public static void printFileName(File file) {
         System.out.println("You have chosen file = " + file.getAbsolutePath());
-    }
-
-    /**
-     * @param line current String line
-     *             <b>Prints current String line</b>
-     */
-    public static void printLine(String line) {
-        System.out.println("Current used string line = " + line);
     }
 
     public static void printEntry(Entry entry) {

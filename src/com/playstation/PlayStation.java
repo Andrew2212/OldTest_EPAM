@@ -3,6 +3,7 @@ package com.playstation;
 import com.entity.CrudDaoEntry;
 import com.executors.Reader;
 import com.executors.Writer;
+import com.storage.Storage;
 
 import java.util.Scanner;
 
@@ -11,12 +12,14 @@ import java.util.Scanner;
  */
 public class PlayStation {
 
-    private static final String WE_ARE_GOING_TO = "We are going to do an currentAction: ";
+    private static final String WE_ARE_GOING_TO = "We are going to do a currentAction: ";
     private static Action currentAction;
 
     public enum Action {
+
         READ_FROM_FILE("read"), PRINT_STORAGE_VALUE("print"), WRITE_TO_FILE("write"), ADD_ENTRY("add"),
         DELETE_ENTRY("del"), DELETE_INVALID_ENTRIES("clear"), SORTING("sort"), FILTER("filter"), QUIT("quit");
+
         public String string;
 
         Action(String string) {
@@ -72,8 +75,8 @@ public class PlayStation {
      */
     public static String obtainEntryAsString() {
         System.out.println("Enter required Entry as <Name> = <Value>");
-        String stringEntry = new Scanner(System.in).nextLine();
-        return stringEntry;
+
+        return new Scanner(System.in).nextLine();
     }
 
     /**
@@ -81,8 +84,8 @@ public class PlayStation {
      */
     public static String obtainEntryName() {
         System.out.println("Enter 'name' for the required Entry");
-        String entryName = new Scanner(System.in).nextLine();
-        return entryName;
+
+        return new Scanner(System.in).nextLine();
     }
 
 //    =========Private Methods===========================
@@ -128,7 +131,7 @@ public class PlayStation {
                 Reader.readFromFileAndLoadToStorage();
                 break;
             case PRINT_STORAGE_VALUE:
-                Printer.printStorage();
+                Printer.printListEntry(Storage.getListEntry());
                 break;
             case WRITE_TO_FILE:
                 Writer.writeToFileFromStorage();
@@ -147,7 +150,7 @@ public class PlayStation {
                 PlayStationStorage.letSortStorage();
                 break;
             case FILTER:
-//                TODO filtering
+                PlayStationStorage.letFilterStorage();
                 break;
             default:
                 Printer.printItIsInvalidEnter();

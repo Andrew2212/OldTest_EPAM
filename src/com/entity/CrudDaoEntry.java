@@ -9,10 +9,7 @@ import java.util.List;
 
 /**
  * Created with IntelliJ IDEA.
- * User: Andrew
- * Date: 21.12.13
- * Time: 15:52
- * To change this template use File | Settings | File Templates.
+ * User: Andrew2212
  */
 public class CrudDaoEntry {
     private static final int NAME = 0;

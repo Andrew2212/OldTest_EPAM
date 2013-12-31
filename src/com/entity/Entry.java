@@ -1,13 +1,8 @@
 package com.entity;
 
-import java.util.Comparator;
-
 /**
  * Created with IntelliJ IDEA.
- * User: Andrew
- * Date: 19.12.13
- * Time: 18:37
- * To change this template use File | Settings | File Templates.
+ * User: Andrew2212
  */
 public class Entry {
     private String name = "name default";
@@ -22,58 +17,6 @@ public class Entry {
 
     }
 
-//    ===========Comparators========================
-//    /**
-//     * Next more than previous
-//     */
-//    public static Comparator<Entry> comparatorByNameLengthAscent;
-//
-//    static {
-//        comparatorByNameLengthAscent = new Comparator<Entry>() {
-//            @Override
-//            public int compare(Entry o1, Entry o2) {
-//                return o1.getName().length() - o2.getName().length();
-//            }
-//        };
-//    }
-//
-//    /**
-//     * Next less than previous
-//     */
-//    public static Comparator<Entry> comparatorByNameLengthDescent;
-//
-//    static {
-//        comparatorByNameLengthDescent = new Comparator<Entry>() {
-//            @Override
-//            public int compare(Entry o1, Entry o2) {
-//                return o2.getName().length() - o1.getName().length();
-//            }
-//        };
-//    }
-
-//    /**
-//     * Next more than previous
-//     */
-//    public static Comparator<Entry> comparatorByValueAscent
-//            = new Comparator<Entry>() {
-//        @Override
-//        public int compare(Entry o1, Entry o2) {
-//            return o1.getValue().length() - o2.getValue().length();
-//        }
-//    } ;
-//
-//    /**
-//     * Next less than previous
-//     */
-//    public static Comparator<Entry> comparatorByValueDescent
-//            = new Comparator<Entry>() {
-//        @Override
-//        public int compare(Entry o1, Entry o2) {
-//            return o2.getValue().length() - o1.getValue().length();
-//        }
-//    } ;
-
-
 //    ==========Equals and HashCode================
 
     @Override
@@ -87,6 +30,7 @@ public class Entry {
         if (!value.equalsIgnoreCase(entry.value)) return false;
 
         return true;
+
     }
 
     @Override
@@ -102,15 +46,7 @@ public class Entry {
         return name;
     }
 
-    public void setName(String name) {
-        this.name = name;
-    }
-
     public String getValue() {
         return value;
-    }
-
-    public void setValue(String value) {
-        this.value = value;
     }
 }

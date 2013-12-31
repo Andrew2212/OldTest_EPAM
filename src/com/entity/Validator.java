@@ -4,18 +4,13 @@ import com.playstation.Printer;
 
 /**
  * Created with IntelliJ IDEA.
- * User: Andrew
- * Date: 21.12.13
- * Time: 15:48
- * To change this template use File | Settings | File Templates.
+ * User: Andrew2212
  */
 public class Validator {
 
     public static boolean validateLine(String[] stringArr) {
 
-        if ((stringArr.length < CrudDaoEntry.VALUE + 1)) return false;
-
-        return true;
+        return (stringArr.length >= CrudDaoEntry.VALUE + 1);
     }
 
     public static String checkOrUpdateName(String entryName) {

@@ -1,16 +1,15 @@
 package com.playstation;
 
+import com.entity.Entry;
+import com.storage.StorageFilter;
 import com.storage.StorageSorter;
-import com.sun.xml.internal.bind.v2.TODO;
 
+import java.util.List;
 import java.util.Scanner;
 
 /**
  * Created with IntelliJ IDEA.
- * User: Andrew
- * Date: 28.12.13
- * Time: 14:45
- * To change this template use File | Settings | File Templates.
+ * User: Andrew2212
  */
 public class PlayStationStorage {
 
@@ -104,10 +103,24 @@ public class PlayStationStorage {
 
 
     private static void filterByName() {
-//        TODO
+        System.out.println("Enter entry 'Name' for filter");
+        String enter = new Scanner(System.in).next().trim();
+        List<Entry> list = StorageFilter.obtainListEntryFilteredByName(enter);
+        if(list.size() != 0){
+            Printer.printListEntry(list);
+        }else{
+            Printer.printItIsInvalidEnter();
+        }
     }
 
     private static void filterByValue() {
-//        TODO
+        System.out.println("Enter entry 'Value' for filter");
+        String enter = new Scanner(System.in).next().trim();
+        List<Entry> list = StorageFilter.obtainListEntryFilteredByValue(enter);
+        if(list.size() != 0){
+            Printer.printListEntry(list);
+        }else{
+            Printer.printItIsInvalidEnter();
+        }
     }
 }

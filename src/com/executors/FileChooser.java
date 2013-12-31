@@ -1,4 +1,4 @@
-package com.executors.utils;
+package com.executors;
 
 import com.Main;
 import com.playstation.Printer;
@@ -45,6 +45,7 @@ public class FileChooser {
         try {
 //          Atomically creates a new, empty file named by this abstract pathName
 //          if and only if a file with this name does not yet exist.
+            //noinspection ResultOfMethodCallIgnored
             file.createNewFile();
         } catch (IOException e) {
 
@@ -57,6 +58,7 @@ public class FileChooser {
         }
 
         if(!file.isFile() || !file.getName().endsWith(END_OF_FILE_NAME)){
+            //noinspection ResultOfMethodCallIgnored
             file.delete();
             file = new File(FILE_PATH_CUSTOM);
         }

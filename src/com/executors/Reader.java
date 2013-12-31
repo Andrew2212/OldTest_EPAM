@@ -2,9 +2,7 @@ package com.executors;
 
 import com.entity.Entry;
 import com.storage.Storage;
-import com.playstation.PlayStation;
 import com.entity.CrudDaoEntry;
-import com.executors.utils.FileChooser;
 import com.playstation.Printer;
 
 import java.io.BufferedReader;
@@ -28,20 +26,18 @@ public class Reader {
         Storage.getListEntry().clear();
 
         File file = FileChooser.chooseOriginalFileForReading();
-        StringBuffer stringBuffer = new StringBuffer();
-        String line = null;
+        String line;
 
         try{
             FileReader fileReader = new FileReader(file);
             BufferedReader bufferedReader = new BufferedReader(fileReader);
             while((line = bufferedReader.readLine()) != null){
-                stringBuffer.append(line);
 
                 Entry entry = CrudDaoEntry.createEntry(line);
                 if(entry != null) Storage.getListEntry().add(entry);
             }
 
-            if(bufferedReader != null)bufferedReader.close();
+            bufferedReader.close();
             Printer.printStorageByRequest();
 
         }catch(IOException e){
